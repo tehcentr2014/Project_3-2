@@ -1,5 +1,7 @@
 ## Content Marketing Assistant
 
+![image](https://github.com/tehcentr2014/Project_3/assets/161617022/fbf18ada-a3e8-4887-a3a0-cc70c2fead05)
+
 ### Overview
 The Content Marketing Assistant is a Python App designed to aid in the automatic generation of product descriptions using OpenAI Assistans API. This application simplifies the process by taking user-provided keywords and generating concise descriptions based on predefined criteria.
 
