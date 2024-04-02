@@ -186,7 +186,7 @@ def main():
         if submit_button:
             manager.create_assistant(
                 name="Content AI Assistent",
-                instructions="You are a personal article summarizer Assistant who knows how to take a list of article's titles and descriptions and then write a short summary of all the news articles",
+                instructions="You are the best Content Marketing assistant, who will create product descriptions using the keyword provided by the client",
                 tools=[
                     {
                         "type": "function",
