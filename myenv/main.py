@@ -38,7 +38,6 @@ if __name__ == '__main__':
 
 # Initialize the OpenAI client
 client = openai.OpenAI()
-OPENAI_API_KEY="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"
 model = "gpt-3.5-turbo-16k"
 
 # Function to enter keywords by client
