@@ -8,6 +8,12 @@ import requests
 import json
 import streamlit as st
 
+# Define the default port
+default_port = 8501  
+
+# Get the port from the environment variable, or use the default port if not set
+port = os.getenv('PORT', default_port)
+
 def removeDuplicates(text):
     # Split text into words
     words = text.split()
@@ -235,6 +241,10 @@ def main():
 
             #t.text("Run Steps:")
             #st.code(manager.run_steps(), line_numbers=True)
+
+# Run the Streamlit app on the specified port
+if __name__ == '__main__':
+    st.run_server(port=port)
 
 
 if __name__ == "__main__":
