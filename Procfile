@@ -1,1 +1,1 @@
-web: streamlit run main.py --server.port 8888
+web: streamlit run main.py 
