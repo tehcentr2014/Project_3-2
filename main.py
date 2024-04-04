@@ -35,6 +35,12 @@ def run_app():
 
 if __name__ == '__main__':
     run_app()
+	
+# Set your OpenAI API key
+api_key = "OPENAI_API_KEY"
+
+# Initialize the OpenAI client with your API key
+openai.api_key = api_key	
 
 # Initialize the OpenAI client
 client = openai.OpenAI()
@@ -42,7 +48,7 @@ model = "gpt-3.5-turbo-16k"
 
 # Function to enter keywords by client
 def get_keywords(keywords):
-    keywords = input("Enter keywords: ")
+    keywords = input("Enter keywords:")
     return keywords
 
 class AssistantManager:
@@ -124,8 +130,8 @@ class AssistantManager:
             func_name = action["function"]["name"]
             arguments = json.loads(action["function"]["arguments"])
 
-            if func_name == "get_keyword":
-                output = get_keyword(topic=arguments["topic"])
+            if func_name == "get_news":
+                output = get_news(topic=arguments["topic"])
                 print(f"STUFFFFF;;;;{output}")
                 final_str = ""
                 for item in output:
@@ -172,7 +178,7 @@ class AssistantManager:
 
 
 def main():
-    # news = get_keyword("bitcoin")
+    # news = get_news("bitcoin")
     # print(news[0])
     manager = AssistantManager()
 
@@ -186,12 +192,12 @@ def main():
         if submit_button:
             manager.create_assistant(
                 name="Content AI Assistent",
-                instructions="You are the best Content Marketing assistant, who will create product descriptions using the keyword provided by the client",
+                instructions="You are a personal article summarizer Assistant who knows how to take a list of article's titles and descriptions and then write a short summary of all the news articles",
                 tools=[
                     {
                         "type": "function",
                         "function": {
-                            "name": "get_keywords",
+                            "name": "get_news",
                             "description": "Get the list of keywords for the given topic",
                             "parameters": {
                                 "type": "object",
